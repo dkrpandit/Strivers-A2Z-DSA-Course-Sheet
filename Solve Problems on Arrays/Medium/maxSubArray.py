@@ -9,10 +9,9 @@ def maxSubArray(self, nums: List[int]) -> int:
         return maxi
         # Time Limit Exceeded
         """
-        """
+        
         # Kadane's Algorithm
-        # not working for -ve elements
-        maxSum=0
+        maxSum=-10000000000
         curSum=0
         for i in range(len(nums)):
             curSum+=nums[i]
@@ -21,12 +20,12 @@ def maxSubArray(self, nums: List[int]) -> int:
             if(curSum<0):
                 curSum=0
         return maxSum
-        """
-        if not nums:
-            return 0
-        maxSum=nums[0]
-        curSum=nums[0]
-        for i in range(1,len(nums)):
-            curSum = max(nums[i],curSum+nums[i])
-            maxSum = max(curSum,maxSum)
-        return maxSum
+    
+        # if not nums:
+        #     return 0
+        # maxSum=nums[0]
+        # curSum=nums[0]
+        # for i in range(1,len(nums)):
+        #     curSum = max(nums[i],curSum+nums[i])
+        #     maxSum = max(curSum,maxSum)
+        # return maxSum
